@@ -1,5 +1,5 @@
-// src/components/ProductCard.jsx
 import React, { useState } from "react";
+import { Check, X } from "lucide-react";
 import "./ProductCard.css";
 
 export default function ProductCard({ product }) {
@@ -12,8 +12,7 @@ export default function ProductCard({ product }) {
     product.pros.length > 3 || product.cons.length > 2;
 
   return (
-    <div className="product-card">
-      {/* Image */}
+    <article className="product-card surface-card">
       <div className="product-image-wrapper">
         <img
           src={product.imageUrl}
@@ -22,31 +21,26 @@ export default function ProductCard({ product }) {
         />
       </div>
 
-      {/* Title */}
       <h3 className="product-name">{product.name}</h3>
-
-      {/* Price */}
       <p className="product-price">{product.priceRange}</p>
-
-      {/* Rating */}
       <span className="product-rating">{product.rating}/10</span>
 
-      {/* Pros & Cons */}
       <ul className="product-list">
         {visiblePros.map((pro, idx) => (
           <li key={`pro-${idx}`} className="pro">
-            ✓ {pro}
+            <Check size={14} aria-hidden="true" />
+            <span>{pro}</span>
           </li>
         ))}
 
         {visibleCons.map((con, idx) => (
           <li key={`con-${idx}`} className="con">
-            ✕ {con}
+            <X size={14} aria-hidden="true" />
+            <span>{con}</span>
           </li>
         ))}
       </ul>
 
-      {/* Read more */}
       {shouldShowToggle && (
         <button
           className="read-more-btn"
@@ -56,7 +50,6 @@ export default function ProductCard({ product }) {
         </button>
       )}
 
-      {/* Action buttons */}
       <div className="product-actions">
         <a
           href={product.amazonUrl}
@@ -76,6 +69,6 @@ export default function ProductCard({ product }) {
           Flipkart
         </a>
       </div>
-    </div>
+    </article>
   );
 }

@@ -1,32 +1,31 @@
-// src/components/Footer.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
+
+const categories = ["IEMs", "Mobiles", "Laptops", "Audio", "Wearables"];
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Brand */}
         <div className="footer-section">
           <h2 className="footer-title">Buying Dojo</h2>
           <p className="footer-text">
-            Your trusted tech buying guide.
+            Premium, unbiased tech recommendations without sponsorship noise.
           </p>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-section">
           <h3 className="footer-heading">Quick Links</h3>
           <ul>
-            <li>IEMs</li>
-            <li>Mobiles</li>
-            <li>Laptops</li>
-            <li>Audio</li>
-            <li>Wearables</li>
+            {categories.map((category) => (
+              <li key={category}>
+                <Link to={`/category/${category.toLowerCase()}`}>{category}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Legal */}
         <div className="footer-section">
           <h3 className="footer-heading">Legal</h3>
           <ul>
@@ -36,7 +35,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
         <div className="footer-section">
           <h3 className="footer-heading">Contact</h3>
           <p className="footer-text">hello@buyingdojo.com</p>

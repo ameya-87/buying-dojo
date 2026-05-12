@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-primary: #f1ebe3;
+  --bg-secondary: #faf6f0;
+  --bg-elevated: #fffdf9;
+  --bg-card: #fffaf4;
+  --text-primary: #2d3440;
+  --text-secondary: #5f6775;
+  --text-muted: #868d9a;
+  --accent: #4f6f78;
+  --accent-hover: #45656d;
+  --accent-soft: #dfe9e8;
+  --accent-tint: #e8eef0;
+  --accent-warm: #b88963;
+  --accent-warm-soft: #f3e8dc;
+  --border-subtle: #e2dbd1;
+  --border-strong: #cfc5b8;
+  --success-text: #3f6d56;
+  --success-soft: #e8f1ea;
+  --danger-text: #8b5454;
+  --danger-soft: #f6e8e8;
+  --overlay: rgba(45, 52, 64, 0.38);
+  --focus-ring: rgba(79, 111, 120, 0.18);
+  --shadow-soft: 0 16px 36px rgba(72, 58, 44, 0.1);
+  --shadow-card: 0 1px 2px rgba(72, 58, 44, 0.05);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --transition-fast: 160ms ease;
+  --transition-medium: 240ms ease;
+  --content-max: 1180px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(184, 137, 99, 0.1), transparent 32%),
+    radial-gradient(circle at 100% 8%, rgba(79, 111, 120, 0.08), transparent 30%),
+    linear-gradient(180deg, var(--bg-primary) 0%, #ebe4da 100%);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-shell {
+  width: min(100% - 40px, var(--content-max));
+  margin: 0 auto;
+}
+
+.surface-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 500ms ease both;
+}

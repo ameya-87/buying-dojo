@@ -1,0 +1,50 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+  padding: 56px 0 72px;
+}
+
+.auth-card {
+  width: min(100%, 480px);
+  padding: 32px;
+}
+
+.auth-eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--accent-warm-soft);
+  color: var(--accent-warm);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.auth-google-btn {
+  width: 100%;
+}
+
+.auth-return {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth-return a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .auth-page {
+    padding-top: 36px;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+}

@@ -1,14 +1,12 @@
 import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
-import {products} from "../data/products";
+import { products } from "../data/Products";
 
-const Home=()=> {
+export default function Home() {
   return (
-  <>
-  <Hero/>
-  <ProductList products={products} />;
-  </>
-  )
+    <>
+      <Hero />
+      <ProductList products={products} />
+    </>
+  );
 }
-
-export default Home 

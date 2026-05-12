@@ -1,10 +1,9 @@
-// src/components/ProductList.jsx
 import React from "react";
 import ProductCard from "./ProductCard";
+import { formatCategory } from "../utils/formatCategory";
 import "./ProductList.css";
 
 export default function ProductList({ products }) {
-  // group products by category
   const groupedProducts = products.reduce((acc, product) => {
     if (!acc[product.category]) {
       acc[product.category] = [];
@@ -14,10 +13,13 @@ export default function ProductList({ products }) {
   }, {});
 
   return (
-    <div className="product-list">
+    <section className="product-list page-shell">
       {Object.entries(groupedProducts).map(([category, items]) => (
         <div key={category} className="category-section">
-          <h2 className="category-title">  {category.toUpperCase()} </h2>
+          <div className="category-header">
+            <h2 className="category-title">{formatCategory(category)}</h2>
+            <div className="category-divider" />
+          </div>
 
           <div className="category-products">
             {items.map((product) => (
@@ -26,6 +28,6 @@ export default function ProductList({ products }) {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 }

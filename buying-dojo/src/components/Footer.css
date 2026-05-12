@@ -1,84 +1,87 @@
-/* src/components/Footer.css */
-
 .footer {
-  background: linear-gradient(135deg, #050b18, #0a1428);
-  color: #cbd5e1;
-  padding: 60px 80px 30px;
-  font-family: Arial, sans-serif;
+  margin-top: 24px;
+  padding: 56px 0 28px;
+  border-top: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--bg-secondary) 88%, var(--accent-tint));
 }
 
 .footer-container {
+  width: min(100% - 40px, var(--content-max));
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 32px;
 }
 
 .footer-title {
-  color: #ffffff;
-  font-size: 22px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .footer-heading {
-  color: #ffffff;
-  font-size: 16px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .footer-text {
-  font-size: 14px;
-  color: #94a3b8;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .footer-section ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .footer-section li {
-  font-size: 14px;
   margin-bottom: 8px;
-  cursor: pointer;
-  color: #94a3b8;
+  font-size: 0.9rem;
 }
 
-.footer-section li:hover {
-  color: #ffffff;
+.footer-section a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
 }
 
 .stripe-badge {
   display: inline-block;
   margin-top: 12px;
-  padding: 6px 14px;
-  border: 1px solid #64748b;
-  border-radius: 20px;
-  font-size: 13px;
-  color: #e2e8f0;
+  padding: 6px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
 }
 
 .footer-bottom {
-  margin-top: 40px;
+  width: min(100% - 40px, var(--content-max));
+  margin: 32px auto 0;
   padding-top: 20px;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid var(--border-subtle);
   text-align: center;
-  font-size: 13px;
-  color: #94a3b8;
+  color: var(--text-muted);
+  font-size: 0.82rem;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
   .footer-container {
     grid-template-columns: 1fr;
-  }
-
-  .footer {
-    padding: 40px 20px;
   }
 }
